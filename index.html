@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TactiChess - Chess Puzzles & AI Gameplay</title>
+    <style>
+        :root {
+            --primary-dark: #1a1a2e;
+            --secondary-dark: #16213e;
+            --accent: #e94560;
+            --text-light: #f5f5f5;
+            --text-gray: #aaaaaa;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            line-height: 1.6;
+            color: var(--text-light);
+            background-color: var(--primary-dark);
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background-color: var(--secondary-dark);
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        .logo {
+            font-size: 3.5em;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        
+        .tagline {
+            font-size: 1.5em;
+            color: var(--text-gray);
+            margin-bottom: 30px;
+        }
+        
+        .app-store-badge {
+            height: 50px;
+        }
+        
+        .features {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 50px;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+        
+        .feature-card {
+            background-color: var(--secondary-dark);
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .feature-icon {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+        
+        .feature-title {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+        
+        .screenshots {
+            padding: 80px 0;
+            background-color: var(--secondary-dark);
+        }
+        
+        .screenshot-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .screenshot {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .screenshot img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .modes {
+            padding: 80px 0;
+        }
+        
+        .mode-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            justify-content: center;
+        }
+        
+        .mode-card {
+            background-color: var(--secondary-dark);
+            border-radius: 10px;
+            padding: 30px;
+            width: 45%;
+            min-width: 300px;
+        }
+        
+        .mode-title {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            color: var(--accent);
+        }
+        
+        .chess-piece {
+            font-size: 2em;
+            margin-right: 10px;
+        }
+        
+        footer {
+            background-color: var(--secondary-dark);
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        .footer-links {
+            margin-bottom: 20px;
+        }
+        
+        .footer-links a {
+            color: var(--text-gray);
+            margin: 0 15px;
+            text-decoration: none;
+        }
+        
+        .footer-links a:hover {
+            color: var(--text-light);
+        }
+        
+        .copyright {
+            color: var(--text-gray);
+            font-size: 0.9em;
+        }
+        
+        @media (max-width: 768px) {
+            .mode-card {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">TactiChess</div>
+            <div class="tagline">Master chess tactics with puzzles and AI gameplay</div>
+            <a href="#" class="app-store-link">
+                <img src="https://developer.apple.com/app-store/marketing/guidelines/images/badge-download-on-the-app-store.svg" alt="Download on the App Store" class="app-store-badge">
+            </a>
+        </div>
+    </header>
+
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Features</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">♟️</div>
+                    <h3 class="feature-title">Tactical Puzzles</h3>
+                    <p>Improve your chess skills with a variety of tactical puzzles organized by type and difficulty.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🤖</div>
+                    <h3 class="feature-title">AI Opponent</h3>
+                    <p>Play full chess games against an adjustable AI that adapts to your skill level.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3 class="feature-title">Elegant Design</h3>
+                    <p>Beautiful minimalist interface with a classic chess aesthetic and intuitive controls.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="modes">
+        <div class="container">
+            <h2 class="section-title">Game Modes</h2>
+            <div class="mode-container">
+                <div class="mode-card">
+                    <h3 class="mode-title"><span class="chess-piece">♙</span>Puzzle Mode</h3>
+                    <p>Challenge yourself with four different puzzle types:</p>
+                    <ul>
+                        <li><strong>Mate in 2:</strong> Find checkmate sequences in just two moves</li>
+                        <li><strong>Mate in 3:</strong> Solve more complex checkmate puzzles</li>
+                        <li><strong>Win Material:</strong> Identify tactical opportunities</li>
+                        <li><strong>Best Move:</strong> Find the strongest move in critical positions</li>
+                    </ul>
+                    <p>Each puzzle type comes with multiple difficulty levels to match your skill level.</p>
+                </div>
+                <div class="mode-card">
+                    <h3 class="mode-title"><span class="chess-piece">♔</span>AI Game Mode</h3>
+                    <p>Test your skills against a simulated chess engine with adjustable difficulty:</p>
+                    <ul>
+                        <li><strong>Easy:</strong> Perfect for beginners learning the game</li>
+                        <li><strong>Medium:</strong> Balanced challenge for casual players</li>
+                        <li><strong>Hard:</strong> Serious test for experienced players</li>
+                    </ul>
+                    <p>Play as either white or black pieces and develop strategies for both sides.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="screenshots">
+        <div class="container">
+            <h2 class="section-title">App Preview</h2>
+            <div class="screenshot-grid">
+                <!-- Replace these with actual screenshots when available -->
+                <div class="screenshot">
+                    <img src="https://via.placeholder.com/300x600/16213e/f5f5f5?text=Home+Screen" alt="TactiChess Home Screen">
+                </div>
+                <div class="screenshot">
+                    <img src="https://via.placeholder.com/300x600/16213e/f5f5f5?text=Puzzle+Mode" alt="TactiChess Puzzle Mode">
+                </div>
+                <div class="screenshot">
+                    <img src="https://via.placeholder.com/300x600/16213e/f5f5f5?text=AI+Game" alt="TactiChess AI Game">
+                </div>
+                <div class="screenshot">
+                    <img src="https://via.placeholder.com/300x600/16213e/f5f5f5?text=Chess+Board" alt="TactiChess Chess Board">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="mailto:your-email@example.com">Contact</a>
+            </div>
+            <div class="copyright">
+                © 2025 TactiChess. All rights reserved.
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
